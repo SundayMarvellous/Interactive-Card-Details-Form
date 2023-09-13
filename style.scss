@@ -1,0 +1,249 @@
+@import "./partial";
+@import "./completed-state";
+
+body{
+    // background: linear-gradient(to right, hsl(249, 99%, 64%) , hsl(278, 94%, 30%));
+    font-size: 62.5%;
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.color{
+    height: 30vh;
+    width: 100vw;
+    background: linear-gradient(to right,  hsl(278, 68%, 11%) 0%, hsl(278, 94%, 30%) 70%,hsl(278, 68%, 11%) 100% );
+}
+.card-back{
+    // background-image: url('./images/bg-card-back.png');
+    width: 80vw;
+    height: 9rem;
+    position: absolute;
+    top: 2rem;
+    right: 0.8rem;
+    border-radius: 8px;
+    background: linear-gradient(white, $Light-grayish-violet);
+    .black-line{
+    position: relative;
+    z-index: 1;
+    height: 2rem;
+    top: 1rem;
+    background-color: rgba(0, 0, 0, 0.779);
+    }
+    .grey-line{
+        position: relative;
+        top: 1rem;
+        height: 2rem;
+        margin-left: 10%;
+        margin-right: 10%;
+        border-radius: 5px;
+        background-color: rgba(173, 177, 188, 0.912);
+        p{
+            // padding: 1rem;
+            text-align: right;
+            font-size: 0.8rem;
+            color: white;
+            padding-top: 0.5rem;
+            padding-right: 1rem;
+        }
+    }
+}
+
+.card-front{
+    margin: 0;
+    padding: 0;
+    // background: linear-gradient( to bottom right, hsl(278, 92%, 40%) , hsl(249, 99%, 64%), hsl(278, 68%, 11%) );
+    width: 70vw;
+    background-image: url('./images/bg-card-front.png');
+    background-repeat: no-repeat;
+    height: 9rem;
+    position: absolute;
+    top: 7.8rem;
+    left: 0.8rem;
+    border-radius: 8px;
+    color: white;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    .circles{
+        // padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        gap: 0.7rem;
+        .big-circle{
+            border-radius: 50%;
+            background-color: white;
+            width: 2rem;
+            height: 2rem;
+        }
+        .small-circle{
+            border-radius: 50%;
+            border: 1px solid white;
+            width: 0.8rem;
+            height: 0.8rem;
+        }
+    }
+    .card-details{
+        position: relative;
+        bottom: 0.5rem;
+        .card-number{
+            font-size: 1.3rem;
+            margin: 0;  
+            margin-bottom: 0.8rem;  
+        }
+        .card-holder{
+            font-size: 0.7rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}
+
+form{
+    margin-top: 30vw;
+    padding: 1.5rem;
+    box-sizing: border-box !important;
+    // border: 1px solid red;
+    // & *{
+    // border: 1px solid red;
+    // }
+    label{
+        color: $Very-dark-violet;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        box-sizing: border-box;
+        margin-top: 2rem;
+    }
+    input{
+        cursor: pointer;
+        margin: 0;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        padding: 0.8rem;
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid $Light-grayish-violet;
+        font-size: 1rem;
+        box-sizing: border-box !important;
+
+        font-family: 'Space Grotesk', sans-serif;
+        &::placeholder { 
+            color: rgba(128, 128, 128, 0.603);
+            opacity: 0.5;
+        }
+        &:hover{
+            border: 1px solid hsl(278, 94%, 30%);
+            box-shadow: hsl(278, 94%, 30%) 0px 0px 3px;
+        }
+        &:focus {
+            border: 1px solid hsl(278, 68%, 11%);
+            box-shadow: hsl(278, 94%, 30%) 0px 0px 2px;
+            outline: none;
+        }
+        
+        //   border: 1px solid var(--cyan);
+        // }
+        // .input:hover {
+        //   box-shadow: var(--cyan) 0px 0px 20px;
+        //   border: 1px solid var(--cyan)
+        // }
+    }
+    .card-datediv{
+        display: flex;
+        position: relative;
+        width: 100%;
+      
+        .card-dates{
+            width: 65%;
+        }
+        .cvcdiv{
+            width: 35%;
+        }
+        .card-datesubdiv{
+            display: flex;
+            width: 100%;
+            gap: 0.5rem;
+        }
+    }
+    button{
+        color:  hsl(300, 13%, 67%);
+        background-color: $Very-dark-violet;
+        position: relative;
+        width: 100%;
+        font-size: 1.1rem;
+        font-family: 'Space Grotesk', sans-serif;
+        padding: 0.7rem;
+        border-radius: 10px;
+        margin-top: 1rem;
+    }
+}
+
+.error{
+    border: 1px solid $active-input-border;
+}
+.error-message{
+    color: $input-errors;
+}
+
+@media screen and (min-width:400px){
+    .color{
+        background: url('./images/bg-main-desktop.png');
+        height: 100vh;
+        width: 28vw;
+    }
+    .card-back{
+        background:none;
+        width: 26.2vw;
+        height: 15rem;
+        background-image: url('./images/bg-card-back.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        top: 54vh;
+        left: 15vw;
+        position: absolute;
+        .black-line{
+            display: none;
+        }
+        .grey-line{
+            // background-color: transparent;
+            position: relative;
+            top: 5.5rem;
+            left: 20vw;
+            height: 2rem;
+            margin: 0;
+            width: 1rem;
+            border-radius: 0;
+            background-color: rgba(173, 177, 188, 0.912);
+        }
+    }
+    
+    .card-front{
+        box-sizing: border-box !important;
+        width: 26.2vw;
+        background-image: url('./images/bg-card-front.png');
+        background-repeat: no-repeat;
+        height: 15rem;
+        background-size: 100% 100%;
+        position: absolute;
+        top: 7.8rem;
+        left: 10vw;
+        border-radius: 0;
+        padding: 2rem;
+        box-shadow: none;
+        // border: 1px solid red;
+    }
+
+    form{
+        position: absolute;
+        top: 0;
+        left: 55vw;
+        margin-top: 12vw;
+        padding: 1.5rem;
+        box-sizing: border-box !important;
+        width: 30vw;
+    }
+}

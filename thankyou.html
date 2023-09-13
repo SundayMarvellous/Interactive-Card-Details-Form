@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="color"></div>
+    <div class="card-back">
+      <div class="black-line"></div>
+      <div class="grey-line"><p id="data2">000</p></div>
+    </div>
+    <div class="card-front">
+      <div class="circles">
+        <div class="big-circle"></div>
+        <div class="small-circle"></div>
+      </div>
+      <div class="card-details">
+        <p class="card-number" id="data1">0000 0000 0000 0000</p>
+        <div class="card-holder">
+          <div id="data">JANE APPLESEED</div>
+          <div><span id="data3">00</span>/<span id="data4">00</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="completed-state">
+      <div class="checkdiv">
+        <img src="./images/icon-complete.svg" class="check" />
+      </div>
+      <p class="thanks">THANK YOU!</p>
+      <p class="comment">We've added your card details</p>
+      <a href="./index.html"><button type="button">Continue</button> </a>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Sunday Marvellous</a>.
+    </div>
+
+    <!-- Move your script to the end of the body to ensure the DOM is loaded -->
+    <script>
+      // Displaying the values from local storage on the page
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("data").innerHTML =
+          localStorage.getItem("txtValue");
+        document.getElementById("data1").innerHTML =
+          localStorage.getItem("txtValue1");
+        document.getElementById("data2").innerHTML =
+          localStorage.getItem("txtValue2");
+        document.getElementById("data3").innerHTML =
+          localStorage.getItem("txtValue3");
+        document.getElementById("data4").innerHTML =
+          localStorage.getItem("txtValue4");
+      });
+    </script>
+  </body>
+</html>
